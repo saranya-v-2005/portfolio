@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saranya Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; }
+    a { text-decoration: none; color: white; }
+    a:hover { color: yellow; }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%; height: 10vh;
+      background: linear-gradient(to right,#0650bf,#133568);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 30px; color: white;
+    }
+    .menu { display: flex; gap: 25px; font-size: 20px; cursor: pointer; }
+    .menu div:hover { color: yellow; transform: scale(1.1); transition: .3s; }
+
+    /* HOME */
+    .home {
+      width: 100%; min-height: 90vh;
+      background: linear-gradient(to right,#f5f7fa,#c3cfe2);
+      padding: 50px; display: flex; flex-wrap: wrap;
+      justify-content: space-around; align-items: center;
+    }
+    .home-text h1 { margin-bottom: 10px; font-size: 35px; }
+    .home-text span { color: red; }
+    .about-btn {
+      margin-top: 20px; padding: 10px 20px;
+      background: yellow; border: 2px solid black;
+      border-radius: 50px; font-size: 18px; cursor: pointer;
+      transition: .3s;
+    }
+    .about-btn:hover { background: black; color: white; }
+
+    .profile-img {
+      width: 280px; height: 280px; border-radius: 50%;
+      border: 6px solid #0650bf; object-fit: cover;
+    }
+
+    /* SOCIAL */
+    .social { display: flex; gap: 25px; margin-top: 20px; }
+    .social img {
+      width: 50px; height: 50px; border-radius: 50%;
+      transition: .3s; border: 2px solid black;
+    }
+    .social img:hover { transform: scale(1.3); }
+
+    /* DYNAMIC SECTION */
+    .section { display: none; text-align: center; padding: 40px; }
+    .section h1 { margin-bottom: 20px; font-size: 32px; }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 25px; padding: 20px;
+    }
+    .project-card {
+      padding: 20px; border-radius: 15px;
+      background: white; border: 2px solid #0650bf;
+      transition: .3s;
+    }
+    .project-card:hover { transform: scale(1.05); box-shadow: 0 0 10px gray; }
+
+    /* FOOTER */
+    footer {
+      width: 100%; padding: 20px; height:100%; text-align: center;
+      background: linear-gradient(to left,#0650bf,#013178);
+      color: white; font-size: 18px;
+    }
+
+    @media(max-width: 700px) {
+      .navbar { flex-direction: column; height: auto; padding: 10px; }
+      .menu { margin-top: 10px; }
+      .home { text-align: center; }
+    }
+      @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* LinkedIn Badge */
+    .linkedin-container {
+      margin-top: 25px;
+      padding: 15px;
+      background: #ffffffcc;
+      border-radius: 15px;
+      border: 2px solid #0650bf;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1 style="color:rgb(255,255,0);">Saranya V</h1>
+    <div class="menu">
+      <div onclick="showSection('home')">Home</div>
+      <div onclick="showSection('education')">Education</div>
+      <div onclick="showSection('skills')">Skills</div>
+      <div onclick="showSection('projects')">Projects</div>
+      <div onclick="showSection('contact')">Contact</div>
+    </div>
+  </div>
+
+  <!-- HOME -->
+  <div class="home" id="home">
+    <div class="home-text">
+      <h1>Hi There.</h1>
+      <h1>This is <span>Saranya</span></h1>
+      <h1>Software Developer</h1>
+      <button class="about-btn" onclick="about()">About</button>
+       <a href="https://drive.google.com/file/d/1lnOKID2O7bhfjMBuuto-OmdTCyDfOXKW/view?usp=drivesdk" target="_blank" style="padding:12px 25px; background:#1a73e8; color:white; border-radius:10px; font-size:18px; font-weight:bold; display:inline-block; margin-top:20px; margin-bottom:20px;">View My Resume</a>
+      <div class="social">
+        <a href="https://github.com/saranya-v-2005" target="_blank"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"></a>
+        <a href="https://www.linkedin.com/in/saranya-v-aa2b6a2b4" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s"></a>
+      </div>
+    </div>
+
+    <img class="profile-img" src="c:\Users\saranya\Pictures\Camera Roll\WhatsApp Image 2026-01-29 at 5.03.03 PM.jpeg" alt="Profile Image" />
+  </div>
+
+  <!-- SECTIONS -->
+ <div id="skills" class="section">
+  <h1 style="font-size:40px; margin-bottom:30px;">My <span style="color:#0650bf;">Skills</span></h1>
+
+  <div style="width:80%; max-width:700px; margin:auto; text-align:left;">
+
+    <!-- Skill Item -->
+    <p>HTML</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:95%; border-radius:20px; transition:1s;"></div>
+    </div>
+
+    <p style="margin-top:15px;">CSS</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:90%; border-radius:20px;"></div>
+    </div>
+
+    <p style="margin-top:15px;">JavaScript</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:85%; border-radius:20px;"></div>
+    </div>
+
+    <p style="margin-top:15px;">React.js</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:75%; border-radius:20px;"></div>
+    </div>
+
+    <p style="margin-top:15px;">Bootstrap</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:80%; border-radius:20px;"></div>
+    </div>
+
+    <p style="margin-top:15px;">Java</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:78%; border-radius:20px;"></div>
+    </div>
+
+    <p style="margin-top:15px;">MySQL</p>
+    <div style="background:#ddd; height:10px; border-radius:20px;">
+      <div style="background:#06b6d4; height:10px; width:76%; border-radius:20px;"></div>
+    </div>
+
+  </div>
+</div>
+
+  <div id="education" class="section">
+  <h1 style="font-size:40px;">Education & <span style="color:#0650bf;">Experience</span></h1>
+
+  <div style="width:80%; max-width:800px; margin:40px auto;">
+
+    <!-- EDUCATION CARD -->
+    <div style="background:white; padding:25px; border-radius:15px; 
+                border:2px solid #0650bf; margin-bottom:25px;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h2 style="color:#0650bf;">🎓 Education</h2>
+      <h3>Bachelor of Computer Applications (BCA)</h3>
+      <p>SSS College For Women</p>
+      <p>Thiruvalluvar University, Vellore</p>
+    </div>
+
+    <!-- EXPERIENCE CARD -->
+    <div style="background:white; padding:25px; border-radius:15px; 
+                border:2px solid #0650bf;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h2 style="color:#0650bf;">💼 Experience</h2>
+      <h3>Junior Developer — Intern</h3>
+      <p>Besant Technologies</p>
+      <p>Hands-on experience in web development and real-world projects.</p>
+    </div>
+
+  </div>
+</div>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="section" style="background:linear-gradient(to bottom,#061937,#04204d); padding:50px; border-radius:10px;">
+    <h1 style="color:white; font-size:40px; margin-bottom:30px;">My Projects</h1>
+
+    <div class="projects-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
+
+      <!-- E-Commerce -->
+      <div class="project-card" style="background:#0a2342; padding:20px; border-radius:15px; box-shadow:0 0 15px rgba(255,255,255,0.1);">
+        <img src="https://graphicdesigneye.com/images/group-bundle-shots.jpg" style="width:100%; border-radius:10px; margin-bottom:15px;"/>
+        <h3 style="color:white;">E-Commerce Website</h3>
+        <div style="margin-top:15px; display:flex; gap:10px;">
+          <a href="https://github.com/saranya-v-2005/E-commerce.git" target="_blank" style="padding:10px 20px; background:#1a73e8; color:white; border-radius:8px; font-weight:bold;">View Code</a>
+          <a href="https://coruscating-tarsier-7f99c6.netlify.app/" target="_blank" style="padding:10px 20px; background:#1a73e8; color:white; border-radius:8px; font-weight:bold;">Live Demo </a> 
+        </div>
+      </div>
+
+      <!-- Restaurant -->
+      <div class="project-card" style="background:#0a2342; padding:20px; border-radius:15px; box-shadow:0 0 15px rgba(255,255,255,0.1);">
+        <img src="https://cdn.dribbble.com/userupload/4618587/file/original-2beb0ee71ade88fc161ecfde13afc8d3.jpg?resize=400x0" style="width:100%; border-radius:10px; margin-bottom:15px;"/>
+        <h3 style="color:white;">Restaurant Landing Page</h3>
+        <div style="margin-top:15px; display:flex; gap:10px;">
+          <a href="https://github.com/saranya-v-2005/Restarunt.git" target="_blank" style="padding:10px 20px; background:#1a73e8; color:white; border-radius:8px; font-weight:bold;">View Code</a>
+          <a href="https://dapper-begonia-d12fd5.netlify.app/" target="_blank" style="padding:10px 20px; background:#1a73e8; color:white; border-radius:8px; font-weight:bold;">Live Demo</a>
+        </div>
+      </div>
+
+      <!-- Bookstore -->
+      <div class="project-card" style="background:#0a2342; padding:20px; border-radius:15px; box-shadow:0 0 15px rgba(255,255,255,0.1);">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQso7gGJ8ycM7hGbfwchKgKXY2eFV_kfqAnkg&s" style="width:100%; border-radius:10px; margin-bottom:15px;"/>
+        <h3 style="color:white;">Bookstore Management System</h3>
+        <div style="margin-top:15px; display:flex; gap:10px;">
+          <a href="https://github.com/saranya-v-2005/Book.git" target="_blank" style="padding:10px 20px; background:#1a73e8; color:white; border-radius:8px; font-weight:bold;">View Code</a>
+          <button disabled style="padding:10px 20px; background:gray; color:white; border-radius:8px; opacity:0.6; cursor:not-allowed;">Live Demo</button>
+        </div>
+      </div>
+
+      <!-- Student Management -->
+      <div class="project-card" style="background:#0a2342; padding:20px; border-radius:15px; box-shadow:0 0 15px rgba(255,255,255,0.1);">
+        <img src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/Student-Management-System.webp?fit=640%2C427&ssl=1" style="width:100%; border-radius:10px; margin-bottom:15px;"/>
+        <h3 style="color:white;">Student Management System</h3>
+        <div style="margin-top:15px; display:flex; gap:10px;">
+          <a href="https://github.com/saranya-v-2005/Student-Management.git" target="_blank" style="padding:10px 20px; background:#1a73e8; color:white; border-radius:8px; font-weight:bold;">View Code</a>
+          <button disabled style="padding:10px 20px; background:gray; color:white; border-radius:8px; opacity:0.6; cursor:not-allowed;">Live Demo</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+      
+
+    </div>
+  </div>
+      </a>
+
+
+  <div id="contact" class="section">
+  <h1 style="font-size:40px;">Get in <span style="color:#0650bf;">Touch</span></h1>
+  <p style="margin-bottom:30px;">I'm always open to new projects or opportunities!</p>
+
+  <div style="width:80%; max-width:900px; margin:auto; display:flex; gap:30px; flex-wrap:wrap;">
+
+    <!-- Contact Info -->
+    <div style="flex:1; min-width:250px; background:white; padding:25px;
+                border-radius:15px; border:2px solid #0650bf;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h2 style="color:#0650bf;">Contact Info</h2>
+      <p><b>Email:</b> saranya2005v@gmail.com</p>
+
+      <p style="margin-top:20px;">Find me on:</p>
+      <div style="display:flex; gap:15px; margin-top:10px;">
+        <a href="https://github.com/saranya-v-2005" target="_blank">
+          <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="45" style="border-radius:50%;">
+        </a>
+        <a href="https://www.linkedin.com/in/saranya-v-aa2b6a2b4" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s" width="45" style="border-radius:50%;">
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="flex:1.5; min-width:300px; background:white; padding:25px;
+                border-radius:15px; border:2px solid #0650bf;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <h2 style="color:#0650bf;">Send a Message</h2>
+      
+      <input type="text" placeholder="Your Name" style="width:100%; padding:12px; margin-top:10px; border-radius:8px; border:1px solid #aaa;">
+      <input type="email" placeholder="Your Email" style="width:100%; padding:12px; margin-top:10px; border-radius:8px; border:1px solid #aaa;">
+      <textarea placeholder="Your Message..." style="width:100%; padding:12px; margin-top:10px; height:120px; border-radius:8px; border:1px solid #aaa;"></textarea>
+
+      <button style="margin-top:15px; padding:12px 25px; background:#0650bf; color:white; border:none; border-radius:10px; font-size:18px;">Send</button>
+    </div>
+
+  </div>
+</div>
+  <!-- FOOTER -->
+  <footer>© 2026 Saranya V</footer>
+
+  <script>
+    function about(){
+      document.querySelector('.home-text h1:nth-child(1)').innerHTML = "Junior Developer";
+      document.querySelector('.home-text h1:nth-child(2)').innerHTML = "Intern at Besant Technologies";
+      document.querySelector('.home-text h1:nth-child(3)').innerHTML = "BCA";
+    }
+
+    function showSection(sec){
+      document.getElementById('home').style.display = sec==='home' ? 'flex' : 'none';
+      document.querySelectorAll('.section').forEach(s => s.style.display='none');
+      if(sec !== 'home') document.getElementById(sec).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
